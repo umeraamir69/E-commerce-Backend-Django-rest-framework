@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'com-back-b0a2075006ae.herokuapp.com',
     'localhost:8000',
     '127.0.0.1:8000',
+    'localhost'
 ]
 
 CORS_ALLOWED_ORIGINS = [
