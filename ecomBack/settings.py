@@ -25,35 +25,29 @@ SECRET_KEY = 'django-insecure-@y9ttaqoi-0@&iido1rlga4mc@8s1c0(lp8ls5vrjc%i%$c-kn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = [
-    'com-back-b0a2075006ae.herokuapp.com' ,
-    'https://com-back-b0a2075006ae.herokuapp.com/',
-    'https://com-back-b0a2075006ae.herokuapp.com', 
-    'localhost:8000' ,
+    'com-back-b0a2075006ae.herokuapp.com',
+    'localhost:8000',
     '127.0.0.1:8000',
 ]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    'com-back-b0a2075006ae.herokuapp.com' ,
-    'https://com-back-b0a2075006ae.herokuapp.com/',
-    'https://com-back-b0a2075006ae.herokuapp.com', 
-    'localhost:8000' ,
+    'com-back-b0a2075006ae.herokuapp.com',
+    'localhost:8000',
     '127.0.0.1:8000',
 ]
-
-
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    'com-back-b0a2075006ae.herokuapp.com' ,
-    'https://com-back-b0a2075006ae.herokuapp.com/',
-    'https://com-back-b0a2075006ae.herokuapp.com', 
-    'localhost:8000' ,
+    'com-back-b0a2075006ae.herokuapp.com',
+    'localhost:8000',
     '127.0.0.1:8000',
 ]
+
 
 # Application definition
 
