@@ -35,7 +35,7 @@ def getCategoryById(request , id):
         searilzerCategory = serializer.categorySerializer(category)
         return Response(searilzerCategory.data , status.HTTP_200_OK)
     except Http404:
-        return Response([] ,status.HTTP_404_NOT_FOUND)
+        return Response({'detail': 'No Category Found'} ,status.HTTP_404_NOT_FOUND)
 
 
 
@@ -47,7 +47,7 @@ def getCategoryBySlug(request , slug):
         searilzerCategory = serializer.categorySerializer(category)
         return Response(searilzerCategory.data , status.HTTP_200_OK)
     except Http404:
-        return Response([] ,status.HTTP_404_NOT_FOUND)
+        return Response({'detail': 'No Category Found'} ,status.HTTP_404_NOT_FOUND)
 
 
 @api_view(['GET'])
