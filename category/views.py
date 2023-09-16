@@ -15,6 +15,13 @@ def category (request):
     try:
         if request.method =='GET':
                 categories = models.Category.objects.filter(is_active= True)
+                req_featuer = request.query_params.get('featuer')
+                req_orderings = request.query_params.get('ordering')
+                if req_featuer is not None:
+                    categories = categories.filter(is_featured=req_featuer.capitalize())
+                    print ("i am here")
+                if req_orderings is not None :
+                    categories = categories.order_by(req_orderings)
                 serializerCategory=  serializer.categorySerializer(categories , many = True)
                 return Response(serializerCategory.data , status.HTTP_200_OK)
         elif request.method =='POST':
@@ -24,6 +31,7 @@ def category (request):
                 return Response(serializerCar.data, status=status.HTTP_201_CREATED)
             return Response(serializerCar.errors, status=status.HTTP_400_BAD_REQUEST)
     except Exception as e:
+        print (e)
         return Response({'detail': 'An error occurred'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
@@ -50,14 +58,3 @@ def getCategoryBySlug(request , slug):
         return Response({'detail': 'No Category Found'} ,status.HTTP_404_NOT_FOUND)
 
 
-@api_view(['GET'])
-def getFeature(request):
-    try :
-        category = models.Category.objects.filter(is_featured= True)
-        if category:
-            searilzerCategory = serializer.categorySerializer(category , many=True)
-            return Response(searilzerCategory.data , status.HTTP_200_OK)
-        else:
-            return Response({'detail': 'No featured categories found'}, status=status.HTTP_404_NOT_FOUND)
-    except Exception as e:
-        return Response({'detail': 'An error occurred'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -64,8 +64,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'debug_toolbar',
-    'products.apps.ProductsConfig',
     'category.apps.CategoryConfig',
+    'products.apps.ProductsConfig',
 ]
 
 MIDDLEWARE = [

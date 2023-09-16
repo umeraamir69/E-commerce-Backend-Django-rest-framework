@@ -29,14 +29,6 @@ class CategoryAdmin(admin.ModelAdmin):
     mark_as_inactive.short_description = "Mark selected categories as inactive"
 
 
-    fieldsets = (
-        ('General Information', {
-            'fields': ('name', 'slug', 'description', 'image')
-        }),
-        ('Category Status', {
-            'fields': ('is_active', 'is_featured')
-        }),
-    )
 
 
     # def product_count(self , obj):
